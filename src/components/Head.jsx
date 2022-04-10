@@ -1,8 +1,10 @@
-import React from 'react'
+import { Link } from "react-router-dom"
 
 function Head() {
   return (
-    <div>Head</div>
+    <div>
+      <Link to="/">cryptoFOMO</Link>
+    </div>
   )
 }
 
