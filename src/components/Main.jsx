@@ -1,18 +1,19 @@
 import useFetch from '../api/useFetch';
 import { Favorites, Content } from "./index";
+import { CoinListContext } from "../context/CoinListContext";
 
 function Main() {
-  const { data, loading, error } = useFetch('https://api.coingecko.com/api/v3/coins/')
+  const { coinList, loading, error } = useFetch('https://api.coingecko.com/api/v3/coins/')
 
   if(loading) return <h1>Loading</h1>
   if(error) console.log(error)
-  console.log(data)
+  // console.log(coinList)
 
   return (
-    <div>
+    <CoinListContext.Provider value={{ coinList }}>
         <Favorites />
         <Content />
-    </div>
+    </CoinListContext.Provider>
   )
 }
 
