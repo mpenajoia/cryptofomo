@@ -1,8 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Head, About, Contact, Footer, Main } from "./index";
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <Head />
+      <Main />
+      <About />
+      <Contact />
+      <Footer />
+    </div>
   )
 }
 
