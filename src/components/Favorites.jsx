@@ -14,7 +14,6 @@ function Favorites() {
     )
   })
   
-  // console.log(favList)
   return (
     <div>
       {favList}

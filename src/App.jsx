@@ -6,13 +6,15 @@ function App() {
 
   return (
     <Router>
-      <Head />
-      <Routes >
-        <Route path="/" element={<Main />}/>
-        <Route path="/about" element={<About />}/>
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
+      <div>
+        <Head />
+        <Routes >
+          <Route path="/" element={<Main />}/>
+          <Route path="/about" element={<About />}/>
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
 }
