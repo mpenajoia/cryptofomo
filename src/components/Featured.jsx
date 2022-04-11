@@ -3,7 +3,7 @@ import { CoinListContext } from "../context/CoinListContext";
 import { Cards } from "./index"
 
 function Featured(props) {
-  const { featured, setInputAmount } = useContext(CoinListContext)  
+  const { featured, inputAmount, setInputAmount } = useContext(CoinListContext)  
   const [ localAmount, setLocalAmount ] = useState(0)
   const coin = props.featuredCoin
   const handleInput = (e) => {
@@ -34,7 +34,9 @@ function Featured(props) {
         <input type="number" onChange={handleInput} placeholder="Enter a whole amount" className='appearance-none'/>
         <button type="submit" >Enter</button>
       </form>
-      <Cards coin={coin}/>
+      <div className={` overflow-auto duration-300 ease-in-out transition-height ${inputAmount <= 0 ? 'h-0' : 'h-96'}`}>
+        <Cards coin={coin}/>
+      </div>
     </div>
   )
 }
