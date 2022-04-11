@@ -34,7 +34,7 @@ function Featured(props) {
         <input type="number" onChange={handleInput} placeholder="Enter a whole amount" className='appearance-none'/>
         <button type="submit" >Enter</button>
       </form>
-      <Cards />
+      <Cards coin={coin}/>
     </div>
   )
 }
