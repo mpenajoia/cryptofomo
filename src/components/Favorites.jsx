@@ -16,7 +16,8 @@ function Favorites() {
       </button>
     )
   })
-
+  if(!coinList)return <h1>Loading...</h1>
+  
   return (
     <div>
       {favList}

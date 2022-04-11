@@ -2,18 +2,17 @@ import { useContext, useState } from 'react';
 import { CoinListContext } from "../context/CoinListContext";
 
 function Card(props) {
-    console.log(props.coin)
     const info = props.vCO
-    
+    const reg = `/\B(?=(\d{3})+(?!\d))/g, ","`
   return (
     <div className='flex flex-col items-center justify-center text-center my-6 p-5 rounded-xl bg-gray-100'>
         <h3 className='font-bold'>A {info.time} ago</h3>
         <div>
-            <p>{info.gainLoss.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+            <p>{info.gainLoss.toString().replace(reg)}</p>
             <p>{info.gainLoss > 0 ? 'Gained' : 'Lost'}</p>
         </div>
         <div>
-            <p>${info.totalValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+            <p>${info.totalValue.toString().replace(reg)}</p>
             <p>Total Worth</p>
         </div>
         <p>You would have {info.tokenAmount} {props.coin.symbol.toUpperCase()}</p>
@@ -23,7 +22,6 @@ function Card(props) {
 
 function Cards(props) {
     const { inputAmount } = useContext(CoinListContext);
-    console.log(inputAmount)
     const coin = props.coin
     const marketData = coin.market_data
     const timeScaleArray = [['Day', '24h'],['Week', '7d'], ['Month', '30d'], ['Year','1y']];
