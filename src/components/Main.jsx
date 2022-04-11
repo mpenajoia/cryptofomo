@@ -1,18 +1,24 @@
+import { useState } from 'react';
 import useFetch from '../api/useFetch';
 import { Favorites, Content } from "./index";
 import { CoinListContext } from "../context/CoinListContext";
 
 function Main() {
-  const { coinList, loading, error } = useFetch('https://api.coingecko.com/api/v3/coins/')
+  const { coinList, loading, error, featuredCoin } = useFetch('https://api.coingecko.com/api/v3/coins/')
+  const [featured, setFeatured] = useState(null)
+  const handleFavs = (e) => {
+    console.log(e.target.value)
+    setFeatured(e.target.value)
+  } 
 
   if(loading) return <h1>Loading</h1>
   if(error) console.log(error)
-  // console.log(coinList)
 
   return (
-    <CoinListContext.Provider value={{ coinList }}>
+    <CoinListContext.Provider value={{ coinList, handleFavs, featured }}>
         <Favorites />
-        <Content />
+        {featured ? <Content /> : ''}
+        {/* <Content /> */}
     </CoinListContext.Provider>
   )
 }

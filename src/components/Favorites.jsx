@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { CoinListContext } from "../context/CoinListContext";
 
 function Favorites() {
-  const { coinList } = useContext(CoinListContext)
+  const { coinList, handleFavs } = useContext(CoinListContext)
   
   const favSymbol = coinList?.filter((item) => {
     return item.symbol === 'btc' || item.symbol === 'eth' || item.symbol === 'sol' || item.symbol === 'matic' || item.symbol === 'dot'
@@ -10,11 +10,11 @@ function Favorites() {
 
   const favList = favSymbol?.map((coin, key) => {
     return (
-      <button key={key}>{coin.name}</button>
+      <button onClick={handleFavs} key={key} value={coin.id} >{coin.name}</button>
     )
   })
   
-  console.log(favList)
+  // console.log(favList)
   return (
     <div>
       {favList}
