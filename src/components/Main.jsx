@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import useFetch from '../api/useFetch';
-import { Favorites, Content } from "./index";
+import { Favorites, Content, Loading } from "./index";
 import { CoinListContext } from "../context/CoinListContext";
 
 function Main() {
@@ -14,7 +14,7 @@ function Main() {
     setFeatured(e.target.alt)
   } 
 
-  if(loading) return <h1>Loading</h1>
+  if(loading) return <Loading />
   if(error) console.log(error)
 
   return (

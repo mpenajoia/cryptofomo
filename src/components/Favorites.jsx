@@ -1,10 +1,10 @@
 import { useContext, useState } from 'react';
 import { CoinListContext } from "../context/CoinListContext";
+import Loading from './Loading';
 
 function Favorites() {
   const { coinList, handleFavs } = useContext(CoinListContext)
   const [favorites, setFavorites] = useState(['btc', 'eth', 'sol', 'matic', 'dot'])
-
   const favSymbol = coinList?.filter((item) => {
     return favorites.includes(item.symbol)
   });
@@ -16,7 +16,8 @@ function Favorites() {
       </button>
     )
   })
-  if(!coinList)return <h1>Loading...</h1>
+
+  if(!coinList)return <Loading />
   
   return (
     <div>
