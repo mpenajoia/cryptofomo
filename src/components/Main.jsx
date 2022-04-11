@@ -7,7 +7,9 @@ function Main() {
   const { coinList, loading, error, featuredCoin } = useFetch('https://api.coingecko.com/api/v3/coins/')
   const [featured, setFeatured] = useState(null)
   const handleFavs = (e) => {
-    setFeatured(e.target.value)
+    console.log(e.target.alt)
+    // setFeatured(e.target.value)
+    setFeatured(e.target.alt)
   } 
 
   if(loading) return <h1>Loading</h1>
@@ -15,8 +17,10 @@ function Main() {
 
   return (
     <CoinListContext.Provider value={{ coinList, handleFavs, featured }}>
-        <Favorites />
-        {featured ? <Content /> : ''}
+        <div className='flex flex-col justify-center items-center'>
+          <Favorites />
+          {featured ? <Content /> : ''}
+        </div>
     </CoinListContext.Provider>
   )
 }
