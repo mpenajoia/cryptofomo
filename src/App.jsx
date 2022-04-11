@@ -6,13 +6,15 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div className="flex flex-col justify-center items-center min-h-screen">
         <Head />
-        <Routes >
-          <Route path="/" element={<Main />}/>
-          <Route path="/about" element={<About />}/>
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <div className="grow self-stretch">
+          <Routes >
+            <Route path="/" element={<Main />}/>
+            <Route path="/about" element={<About />}/>
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
         <Footer />
       </div>
     </Router>
