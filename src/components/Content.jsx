@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { CoinListContext } from "../context/CoinListContext";
 import useFetch from '../api/useFetch';
+import { Featured } from "./index"
 
 function Content() {
   const { featured } = useContext(CoinListContext)  
@@ -13,9 +14,10 @@ function Content() {
       <img alt={featured} src={featuredCoin.image.large} />
         {featured}
       <form>
-        <input type="text" placeholder="Enter an amount"/>
+        <input type="number" placeholder="Enter an amount" className='appearance-none'/>
         <button type="submit" >Enter</button>
       </form>
+      <Featured />
     </div>
   )
 }
