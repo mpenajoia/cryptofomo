@@ -6,8 +6,10 @@ import { CoinListContext } from "../context/CoinListContext";
 function Main() {
   const { coinList, loading, error, featuredCoin } = useFetch('https://api.coingecko.com/api/v3/coins/')
   const [featured, setFeatured] = useState(null)
+  const [inputAmount, setInputAmount] = useState(0)
+
   const handleFavs = (e) => {
-    console.log(e.target.alt)
+    // console.log(e.target.alt)
     // setFeatured(e.target.value)
     setFeatured(e.target.alt)
   } 
@@ -16,7 +18,7 @@ function Main() {
   if(error) console.log(error)
 
   return (
-    <CoinListContext.Provider value={{ coinList, handleFavs, featured }}>
+    <CoinListContext.Provider value={{ coinList, handleFavs, featured, inputAmount, setInputAmount, featuredCoin }}>
         <div className='flex flex-col justify-center items-center'>
           <Favorites />
           {featured ? <Content /> : ''}
