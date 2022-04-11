@@ -17,12 +17,16 @@ function Featured(props) {
   
   function FeatureCard() {
     return (
-      <div className='rounded-xl p-5 w-full'>
-        <p>${coin.market_data.current_price.usd}</p>
-        <img alt={featured} src={coin.image.large} />
-        <p>{coin.name} - {coin.symbol.toUpperCase()}</p>
-        <p>Market Rank: #{coin.market_cap_rank}</p>
-        <p>All Time High: ${coin.market_data.ath.usd}</p>
+      <div className='relative w-5/6 my-6 group'>
+        <div className='absolute inset-0 bg-gradient-to-r from-pink-500 bg-purple-500 rounded-xl blur' ></div>
+        
+        <div className='relative bg-gradient-to-t from-black to-gray-900 rounded-xl text-zinc-200 font-bold p-4'>
+          <p>${coin.market_data.current_price.usd}</p>
+          <img alt={featured} src={coin.image.large} />
+          <p>{coin.name} - {coin.symbol.toUpperCase()}</p>
+          <p>Market Rank: #{coin.market_cap_rank}</p>
+          <p>All Time High: ${coin.market_data.ath.usd}</p>
+        </div>
       </div>
     )
   }
