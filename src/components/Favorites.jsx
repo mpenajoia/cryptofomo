@@ -21,7 +21,7 @@ function Favorites() {
   
   return (
     // <div className='no-scrollbar overflow-auto whitespace-nowrap w-5/6'>
-    <div className='flex w-5/6'>
+    <div className='flex w-5/6 justify-center'>
       <div className='no-scrollbar overflow-auto whitespace-nowrap flex'>
           {favList}
           <button onClick={(e) => setFavorites([...favorites, e.target.value])} value="algo">Add Algo</button>

@@ -4,7 +4,7 @@ function Head() {
   return (
     <div className="py-5">
       <Link to="/">
-        <h1 className="text-3xl font-black text-glow ">cryptoFOMO</h1>
+        <h1 className="text-4xl font-black text-glow ">cryptoFOMO</h1>
       </Link>
     </div>
   )
