@@ -21,10 +21,8 @@ function Favorites() {
   
   return (
     <div className='overflow-x-auto whitespace-nowrap w-5/6'>
-
         {favList}
         <button onClick={(e) => setFavorites([...favorites, e.target.value])} value="algo">Add Algo</button>
-
     </div>
   )
 }

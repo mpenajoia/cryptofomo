@@ -39,7 +39,7 @@ function Cards(props) {
     })
 
   return (
-    <div>{timeScaleMap}</div>
+    <div className='px-6'>{timeScaleMap}</div>
   )
 }
 
