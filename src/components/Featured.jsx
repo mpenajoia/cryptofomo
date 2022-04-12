@@ -43,8 +43,8 @@ function Featured(props) {
     <div className='w-full flex flex-col items-center'>
       <FeatureCard />
       <form onSubmit={handleInputSubmit} className="flex flex-col w-3/4 items-center gap-3 mb-5" >
-        <input type="number" onChange={handleInput} placeholder="Enter a whole amount" className='appearance-none bg-gradient-to-r from-gray-900 bg-gray-800 drop-shadow-xl rounded-xl py-1 focus:outline-none text-center placeholder:text-zinc-500 placeholder:text-base text-pink-500 text-2xl'/>
-        <button type="submit" className='bg-gradient-to-r from-pink-700 bg-purple-600 rounded-xl w-2/5 py-2 drop-shadow-xl text-lg  font-bold hover:bg-purple-500 hover:from-pink-600' >Enter</button>
+        <input type="number" onChange={handleInput} placeholder="Enter a whole amount" className='appearance-none bg-gradient-to-r from-gray-900 bg-gray-800 drop-shadow-xl rounded-xl px-4 py-2 focus:outline-none text-center placeholder:text-zinc-500 placeholder:text-base text-pink-500 text-2xl'/>
+        <button type="submit" className='bg-gradient-to-r from-pink-700 bg-purple-600 rounded-xl px-5 py-2 drop-shadow-xl text-lg  font-bold hover:bg-purple-500 hover:from-pink-600' >Enter</button>
       </form>
       <div className={`flex justify-center items-start overflow-auto duration-300 ease-in-out transition-height w-full ${inputAmount <= 0 ? 'h-0' : 'h-[28rem]'}`}>
         <Cards coin={coin}/>
