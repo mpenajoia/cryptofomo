@@ -30,7 +30,7 @@ function Featured(props) {
       </div>
     )
   }
-  console.log(coin)
+  
   return (
     <div className='w-full flex flex-col items-center'>
       <FeatureCard />

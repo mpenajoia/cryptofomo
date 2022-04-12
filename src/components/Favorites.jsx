@@ -11,8 +11,8 @@ function Favorites() {
 
   const favList = favSymbol?.map((coin, key) => {
     return (
-      <button onClick={handleFavs} key={key} value={coin.id}>
-        <img alt={coin.id} src={coin.image.thumb}/>  
+      <button className='mx-4' onClick={handleFavs} key={key} value={coin.id}>
+        <img alt={coin.id} src={coin.image.small} />  
       </button>
     )
   })
@@ -20,9 +20,11 @@ function Favorites() {
   if(!coinList)return <Loading />
   
   return (
-    <div>
-      {favList}
-      <button onClick={(e) => setFavorites([...favorites, e.target.value])} value="algo">Add Algo</button>
+    <div className='overflow-x-auto whitespace-nowrap w-5/6'>
+
+        {favList}
+        <button onClick={(e) => setFavorites([...favorites, e.target.value])} value="algo">Add Algo</button>
+
     </div>
   )
 }

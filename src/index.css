@@ -34,3 +34,7 @@ input[type=number] {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.text-glow {
+  text-shadow: 0 0 18px rgb(192 219 255);
+}

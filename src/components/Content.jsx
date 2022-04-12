@@ -5,7 +5,7 @@ import { Featured, Loading } from "./index"
 
 
 function Content() {
-  const { featured, setInputAmount } = useContext(CoinListContext)  
+  const { featured } = useContext(CoinListContext)  
   const { featuredCoin } = useFetch(`https://api.coingecko.com/api/v3/coins/${featured}`)
 
   if(!featuredCoin) return <Loading />
