@@ -38,3 +38,6 @@ input[type=number] {
 .text-glow {
   text-shadow: 0 0 18px rgb(192 219 255);
 }
+.text-glow-2 {
+  text-shadow: 0 0 38px rgb(192 219 255);
+}

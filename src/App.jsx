@@ -8,7 +8,7 @@ function App() {
     <Router>
       <div className="flex flex-col justify-center items-center min-h-screen">
         <Head />
-        <div className="grow self-stretch">
+        <div className="grow self-stretch flex justify-center items-center">
           <Routes >
             <Route path="/" element={<Main />}/>
             <Route path="/about" element={<About />}/>
