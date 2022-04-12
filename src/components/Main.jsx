@@ -19,7 +19,7 @@ function Main() {
 
   return (
     <CoinListContext.Provider value={{ coinList, handleFavs, featured, inputAmount, setInputAmount, featuredCoin }}>
-        <div className='flex flex-col justify-center items-center'>
+        <div className='flex flex-col justify-center items-center w-full'>
           <Favorites />
           {featured ? <Content /> : ''}
         </div>
