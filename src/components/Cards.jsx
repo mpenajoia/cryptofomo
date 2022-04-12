@@ -5,11 +5,10 @@ function Card(props) {
     const info = props.vCO
     const reg = `/\B(?=(\d{3})+(?!\d))/g, ","`
   return (
-    <div className='flex flex-col items-center justify-center text-center my-6 p-5 rounded-xl bg-gray-100'>
-        <h3 className='font-bold'>A {info.time} ago</h3>
-        <div>
-            <p>{info.gainLoss.toString().replace(reg)}</p>
-            <p>{info.gainLoss > 0 ? 'Gained' : 'Lost'}</p>
+    <div className='flex flex-col gap-1 items-center justify-center text-center my-6 p-5 rounded-2xl bg-gradient-to-t from-gray-900 bg-gray-800 drop-shadow-xl '>
+        <h3 className='font-bold text-2xl'>A {info.time} ago</h3>
+        <div className={`text-xl font-bold ${info.gainLoss > 0 ? 'text-green-500' : 'text-red-500'}`}>
+            <p>${info.gainLoss.toString().replace(reg)} {info.gainLoss > 0 ? 'Gained' : 'Lost'}</p>
         </div>
         <div>
             <p>${info.totalValue.toString().replace(reg)}</p>
