@@ -10,12 +10,12 @@ function useFetch(url) {
     useEffect(() => {
         setLoading(true);
         axios.get(url)
-            .then((response) => {
-                if(url.length > 39) setFeaturedCoin(response.data)
-                else{setCoinList(response.data)}
-            })
-            .catch((err) => setError(err))
-            .finally(setLoading(false))
+        .then((response) => {
+            if(url.length > 39) setFeaturedCoin(response.data)
+            else{setCoinList(response.data)}
+        })
+        .catch((err) => setError(err))
+        .finally(setLoading(false));
     }, [url]);
 
     return { coinList, loading, error, featuredCoin }
