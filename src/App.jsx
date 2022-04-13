@@ -10,9 +10,9 @@ function App() {
         <Head />
         <div className="grow self-stretch flex justify-center items-center">
           <Routes >
-            <Route path="/" element={<Main />}/>
-            <Route path="/about" element={<About />}/>
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/cryptoFOMO/" element={<Main />}/>
+            <Route path="/cryptoFOMO/about" element={<About />}/>
+            <Route path="/cryptoFOMO/contact" element={<Contact />} />
           </Routes>
         </div>
         <Footer />
