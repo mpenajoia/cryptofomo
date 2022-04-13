@@ -7,7 +7,7 @@ function Footer() {
         <Link className="hover:text-pink-500" to="/cryptoFOMO/about">About</Link>
         <Link className="hover:text-pink-500" to="/cryptoFOMO/contact">Contact</Link>
       </div>
-      <p className="text-xs text-center">© 2021 All rights and all lefts reserved.</p>
+      <p className="text-xs text-center">© 2021 All rights and all lefts reserved. Created by <a className="hover:border-b" href="https://penajoia.com" target="_blank" rel="noreferrer" >Marco Silva</a></p>
     </footer>
   )
 }
