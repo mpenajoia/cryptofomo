@@ -4,12 +4,9 @@ import Loading from './Loading';
 
 function Favorites() {
   const { coinList, handleFavs } = useContext(CoinListContext)
-  console.log(coinList)
   const [favorites, setFavorites] = useState(['btc', 'eth', 'sol', 'matic', 'dot'])
   const [ add, setAdd] = useState(true)
-  const favSymbol = coinList?.filter((item) => {
-    return favorites.includes(item.symbol)
-  });
+  const favSymbol = coinList?.filter((item) => favorites.includes(item.symbol));
   const favList = favSymbol?.map((coin, key) => {
     return (
       <button className='mx-4 shrink-0 duration-200 ease-in-out scale-100 hover:scale-110' onClick={handleFavs} key={key} value={coin.id}>
@@ -20,7 +17,6 @@ function Favorites() {
 
   const addButton = (e) => {
     e.preventDefault()
-    // setFavorites([...favorites, e.target.value])
     setAdd(!add)
   }
   
@@ -33,15 +29,11 @@ function Favorites() {
   const submitInput = (e) => {
     e.preventDefault()
     console.log(coinInput)
-    const coinCheck = coinList.filter((coin) => {
-      return coin.symbol === coinInput.toLowerCase() || coin.name === coinInput.toLowerCase()
-    })
-    console.log(coinCheck.length)
+    const coinCheck = coinList.filter((coin) => coin.symbol === coinInput.toLowerCase() || coin.name === coinInput.toLowerCase())
     if(coinCheck.length > 0){
       setSearchError(true)
       setFavorites([...favorites, coinCheck[0].symbol])
-    }
-      else { setSearchError(false) }
+    } else { setSearchError(false) }
     setCoinInput('')
   }
 

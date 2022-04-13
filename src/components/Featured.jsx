@@ -9,7 +9,6 @@ function Featured(props) {
   const handleInput = (e) => {
     e.preventDefault()
     setLocalAmount(e.target.value)
-    // if(localAmount > 0) setInputAmount(localAmount)
   }
   const handleInputSubmit = (e) => {
     e.preventDefault()
