@@ -28,12 +28,10 @@ function Favorites() {
   }
   const submitInput = (e) => {
     e.preventDefault()
-    const coinCheck = coinList.filter((coin) => coin.symbol === coinInput.toLowerCase() || coin.name === coinInput.toLowerCase())
+    const coinCheck = coinList.filter((coin) => coin.symbol === coinInput.toLowerCase() || coin.name.toLowerCase() === coinInput)
     // const coinCheck = fullCoinList.filter((coin) => coin.symbol === coinInput.toLowerCase() || coin.name === coinInput.toLowerCase())
 
-
     if(coinCheck.length > 0){
-      console.log(favorites)
       setSearchError(true)
       setFavorites([...favorites, coinCheck[0].symbol])
     } else { setSearchError(false) }

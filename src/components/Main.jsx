@@ -17,8 +17,6 @@ function Main() {
         .catch((err) => console.log(err));
       }, [])
       
-      
-      // console.log(fullCoinList[199].symbol)
   const handleFavs = (e) => {
     setFeatured(e.target.alt)
   } 
