@@ -46,14 +46,15 @@ function Favorites() {
           {favList}
             <button onClick={addButton} className="flex justify-center items-center rounded-full hover:bg-purple-500 hover:from-pink-600 bg-gradient-to-r from-pink-700 bg-purple-600 min-w-[50px] h-[50px] duration-200 ease-in-out scale-100 hover:scale-110 mx-3 text-2xl font-bold cursor-pointer" value="algo">{add ? '+' : '-'}</button>
       </div>
-      <div className={`overflow-auto duration-300 ease-in-out transition-height ${add ? 'h-0' : 'h-32 md:h-24'}`}>
+      <div className={`overflow-auto duration-300 ease-in-out transition-height ${add ? 'h-0' : 'h-52 md:h-24'}`}>
         <form onSubmit={submitInput} className="flex flex-col gap-4 items-center">
-          <div className='text-center text-xl font-bold'>
-            {searchError ? <p>Which <a href="https://www.coingecko.com/" target="_blank" rel="noreferrer" className='underline hover:text-pink-500'>top 50 cryptocurrency</a> would you also like to check?</p> : <p className='text-red-600'>Please double check your spelling.</p>}
+          <div className='text-center flex justify-center text-xl font-bold'>
+            {searchError ? <p className='w-3/4 md:w-full'>Which <a href="https://www.coingecko.com/" target="_blank" rel="noreferrer" className='underline hover:text-pink-500'>top 50 cryptocurrency</a> would you also like to check?</p> : <p className='text-red-600'>Please double check your spelling.</p>}
           </div>
-          <div className='flex'>
-            <input type="text" onChange={searchInput} placeholder="Search by symbol or name" value={coinInput} className='appearance-none bg-gradient-to-r from-gray-900 bg-gray-800 drop-shadow-xl rounded-tl-xl rounded-bl-xl px-4 py-2 focus:outline-none text-center placeholder:text-zinc-500 placeholder:text-base text-pink-500 text-2xl' />
-            <button className='bg-gradient-to-r from-pink-700 bg-purple-600 rounded-tr-xl rounded-br-xl px-5 py-2 drop-shadow-xl text-lg font-bold hover:bg-purple-500 hover:from-pink-600' type="submit">Search</button>
+          <div className='flex flex-col md:flex-row gap-3 md:gap-0'>
+            <input type="text" onChange={searchInput} placeholder="Search by symbol or name" value={coinInput} className='appearance-none bg-gradient-to-r from-gray-900 bg-gray-800 drop-shadow-xl rounded-xl md:rounded-none md:rounded-tl-xl md:rounded-bl-xl px-4 py-2 focus:outline-none text-center placeholder:text-zinc-500 placeholder:text-base text-pink-500 text-2xl' />
+            
+            <button className='bg-gradient-to-r from-pink-700 bg-purple-600 rounded-xl md:rounded-none md:rounded-tr-xl md:rounded-br-xl px-5 py-2 drop-shadow-xl text-lg font-bold hover:bg-purple-500 hover:from-pink-600' type="submit">Search</button>
           </div>
         </form>
       </div>
