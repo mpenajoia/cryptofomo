@@ -30,6 +30,7 @@ function Favorites() {
     e.preventDefault()
     const coinCheck = coinList.filter((coin) => coin.symbol === coinInput.toLowerCase() || coin.name.toLowerCase() === coinInput)
     // const coinCheck = fullCoinList.filter((coin) => coin.symbol === coinInput.toLowerCase() || coin.name === coinInput.toLowerCase())
+    // test code for favorites-indv-api branch
 
     if(coinCheck.length > 0){
       setSearchError(true)
@@ -53,7 +54,7 @@ function Favorites() {
           </div>
           <div className='flex flex-col md:flex-row gap-3 md:gap-0'>
             <input type="text" onChange={searchInput} placeholder="Search by symbol or name" value={coinInput} className='appearance-none bg-gradient-to-r from-gray-900 bg-gray-800 drop-shadow-xl rounded-xl md:rounded-none md:rounded-tl-xl md:rounded-bl-xl px-4 py-2 focus:outline-none text-center placeholder:text-zinc-500 placeholder:text-base text-pink-500 text-2xl' />
-            
+
             <button className='bg-gradient-to-r from-pink-700 bg-purple-600 rounded-xl md:rounded-none md:rounded-tr-xl md:rounded-br-xl px-5 py-2 drop-shadow-xl text-lg font-bold hover:bg-purple-500 hover:from-pink-600' type="submit">Search</button>
           </div>
         </form>
