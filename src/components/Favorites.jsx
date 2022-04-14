@@ -30,7 +30,6 @@ function Favorites() {
     e.preventDefault()
     const coinCheck = coinList.filter((coin) => coin.symbol === coinInput.toLowerCase() || coin.name.toLowerCase() === coinInput)
     // const coinCheck = fullCoinList.filter((coin) => coin.symbol === coinInput.toLowerCase() || coin.name === coinInput.toLowerCase())
-    // test code for favorites-indv-api branch
 
     if(coinCheck.length > 0){
       setSearchError(true)
