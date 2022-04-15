@@ -67,7 +67,7 @@ function Favorites() {
       <div className={`overflow-auto duration-300 ease-in-out transition-height ${add ? 'h-0' : 'h-52 md:h-24'}`}>
         <form onSubmit={submitInput} className="flex flex-col gap-4 items-center">
           <div className='text-center flex justify-center text-xl font-bold'>
-            {searchError ? <p className='w-3/4 md:w-full'>Which <a href="https://www.coingecko.com/" target="_blank" rel="noreferrer" className='underline hover:text-pink-500'>top 50 cryptocurrency</a> would you also like to check?</p> : <p className='text-red-600'>Please double check your spelling.</p>}
+            {searchError ? <p className='w-3/4 md:w-full'>Which cryptocurrency would you also like to check?</p> : <p className='text-red-600'>Please double check your spelling.</p>}
           </div>
           <div className='flex flex-col md:flex-row gap-3 md:gap-0'>
             <input type="text" onChange={searchInput} placeholder="Search by symbol or name" value={coinInput} className='appearance-none bg-gradient-to-r from-gray-900 bg-gray-800 drop-shadow-xl rounded-xl md:rounded-none md:rounded-tl-xl md:rounded-bl-xl px-4 py-2 focus:outline-none text-center placeholder:text-zinc-500 placeholder:text-base text-pink-500 text-2xl' />
