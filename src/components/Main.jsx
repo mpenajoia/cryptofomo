@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import useFetch from '../api/useFetch';
-import { Favorites, Content, Loading } from "./index";
+import { Favorites, Content, Loading, Instructions } from "./index";
 import { CoinListContext } from "../context/CoinListContext";
 import axios from "axios";
 
@@ -28,7 +28,7 @@ function Main() {
     <CoinListContext.Provider value={{ coinList, handleFavs, featured, inputAmount, setInputAmount, featuredCoin, fullCoinList }}>
         <div className='flex flex-col justify-center items-center w-full'>
           <Favorites />
-          {featured ? <Content /> : ''}
+          {featured ? <Content /> : <Instructions/> }
         </div>
     </CoinListContext.Provider>
   )

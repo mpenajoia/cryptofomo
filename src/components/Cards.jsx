@@ -38,8 +38,13 @@ function Cards(props) {
     })
 
   return (
-    <div className='flex flex-col md:flex-wrap md:flex-row w-5/6 justify-center md:justify-around lg:justify-center gap-4 '>
-      {timeScaleMap}
+    <div className='flex flex-col items-center gap-5'>
+      <div className='flex justify-center w-2/3 items-center px-7 py-8 rounded-2xl bg-gradient-to-t from-gray-900 bg-gray-800 drop-shadow-xl text-center'>
+        <p className='font-bold'>The breakdowns below show what your <span className='text-green-400'>${inputAmount}</span> investment in <span className='text-pink-500'>{coin.name}</span> would be worth today depending on when you bought it.</p>
+      </div>
+      <div className='flex flex-col md:flex-wrap md:flex-row w-5/6 justify-center md:justify-around lg:justify-center gap-4 '>
+        {timeScaleMap}
+      </div>
     </div>
   )
 }

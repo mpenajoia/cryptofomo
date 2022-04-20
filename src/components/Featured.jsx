@@ -16,7 +16,7 @@ function Featured(props) {
   }
   function FeatureCard() {
     return (
-      <div className='relative w-5/6 lg:w-3/4 mt-8 mb-10 group'>
+      <div className='relative w-5/6 lg:w-1/2 mt-8 mb-10 group'>
         <div className='absolute inset-0 bg-gradient-to-r from-pink-500 bg-purple-500 rounded-3xl blur' ></div>
         <div className='relative bg-gradient-to-t from-gray-900 bg-gray-800 hover:bg-gray-700 rounded-3xl text-zinc-200 font-bold p-8 flex flex-col justify-center items-center gap-6'>
           <div className='w-5/6 lg:w-full flex justify-between'>
@@ -41,14 +41,16 @@ function Featured(props) {
   return (
     <div className='w-full flex flex-col items-center'>
       <FeatureCard />
-      <form onSubmit={handleInputSubmit} className="flex justify-center items-center" >
+      <form onSubmit={handleInputSubmit} className="flex flex-col gap-4 justify-center items-center" >
+        <div className='flex justify-center items-center text-center text-purple-500 text-lg font-bold'>
+          {inputAmount <= 0 ? <p>Enter a dollar amount that represents your imaginary investment.</p> : ''}
+        </div> 
         <div className='flex flex-col md:flex-row gap-3 md:gap-0 mb-5'>
           <input type="number" onChange={handleInput} placeholder="Enter a whole amount" className='appearance-none bg-gradient-to-r from-gray-900 bg-gray-800 drop-shadow-xl px-4 py-2 focus:outline-none text-center placeholder:text-zinc-500 placeholder:text-base text-pink-500 rounded-xl md:rounded-none md:rounded-tl-xl md:rounded-bl-xl text-2xl'/>
-
           <button type="submit" className='bg-gradient-to-r from-pink-700 bg-purple-600 rounded-xl md:rounded-none md:rounded-tr-xl md:rounded-br-xl px-5 py-2 drop-shadow-xl text-lg  font-bold hover:bg-purple-500 hover:from-pink-600 w-full' >Enter</button>
         </div>
       </form>
-      <div className={`flex justify-center items-start overflow-auto duration-300 ease-in-out transition-height w-11/12 ${inputAmount <= 0 ? 'h-0' : 'h-[28rem]'}`}>
+      <div className={`flex justify-center items-start overflow-auto duration-300 ease-in-out transition-height w-11/12 ${inputAmount <= 0 ? 'h-0' : 'h-[34rem]'}`}>
         <Cards coin={coin}/>
       </div>
     </div>

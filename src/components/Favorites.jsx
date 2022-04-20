@@ -6,9 +6,7 @@ import Loading from './Loading';
 function Favorites() {
   const { coinList, handleFavs, fullCoinList } = useContext(CoinListContext)
   const [favorites, setFavorites] = useState(['btc', 'eth', 'sol', 'matic', 'dot'])
-
   const [ addedFavs, setAddedFavs ] = useState([])
-
   const [ add, setAdd] = useState(true)
   const favSymbol = coinList?.filter((item) => favorites.includes(item.symbol));
   const favList = favSymbol?.map((coin, key) => {
