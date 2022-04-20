@@ -12,8 +12,6 @@ function Favorites() {
   const [ add, setAdd] = useState(true)
   const favSymbol = coinList?.filter((item) => favorites.includes(item.symbol));
   const favList = favSymbol?.map((coin, key) => {
-    // console.log("coin ",coin)
-    // console.log("fullCoinList ", fullCoinList) //fullCoinList[i].id
     return (
       <button className='mx-4 shrink-0 duration-200 ease-in-out scale-100 hover:scale-110' onClick={handleFavs} key={key} value={coin.id}>
         <img alt={coin.id} src={coin.image.small}  />  
@@ -41,16 +39,11 @@ function Favorites() {
   }
   const submitInput = (e) => {
     e.preventDefault()
-    // const coinCheck = coinList.filter((coin) => coin.symbol === coinInput.toLowerCase() || coin.name.toLowerCase() === coinInput)
     const coinCheck = fullCoinList.filter((coin) => coin.symbol === coinInput.toLowerCase() || coin.name.toLowerCase() === coinInput)
 
     if(coinCheck.length > 0){
       setSearchError(true)
-      // setFavorites([...favorites, coinCheck[0].symbol])
       setAddedFavs([...addedFavs, coinCheck[0].symbol])
-
-      // instead of setting fullCoinList's filter to setFavorites it would be set to a new STATE that only handles the new added tokens in parallel to the favslist
-
     } else { setSearchError(false) }
     setCoinInput('')
   }
