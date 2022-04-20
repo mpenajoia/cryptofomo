@@ -5,7 +5,10 @@ function Card(props) {
     const info = props.vCO
     const reg = `/\B(?=(\d{3})+(?!\d))/g, ","`
   return (
-    <div className='flex flex-col gap-1 items-center justify-center text-center p-5 rounded-2xl bg-gradient-to-t from-gray-900 bg-gray-800 drop-shadow-xl w-full md:w-5/6 lg:w-5/12 hover:bg-gray-700'>
+    <div className='relative flex flex-col gap-1 items-center justify-center text-center p-5 rounded-2xl bg-gradient-to-t from-gray-900 bg-gray-800 drop-shadow-xl w-full md:w-5/6 lg:w-5/12 hover:bg-gray-700'>
+        { (info.gainLoss > (100 * props.inputAmount)) ? <div className='absolute flex justify-center items-center -top-3 -right-3 rotate-12 animate-pulse bg-red-500 rounded-full p-3 font-black text-sm h-16 w-16'>
+          <p className='leading-3'>GOT<br />DAMB</p>
+        </div> : '' }
         <h3 className='font-bold text-2xl'>A {info.time} ago</h3>
         <div className={`text-xl font-bold ${info.gainLoss > 0 ? 'text-green-500' : 'text-red-500'}`}>
             <p>${info.gainLoss.toString().replace(reg)} {info.gainLoss > 0 ? 'Gained' : 'Lost'}</p>
@@ -33,7 +36,7 @@ function Cards(props) {
         const gainLoss = (totalValue - inputAmount).toFixed(2)
         const variableCoinObject = {time: item[0], gainLoss, totalValue, tokenAmount}
         return (
-            <Card key={key} coin={coin} vCO={variableCoinObject}/>
+            <Card key={key} coin={coin} vCO={variableCoinObject} inputAmount={inputAmount}/>
         )
     })
 
