@@ -42,7 +42,7 @@ function Featured(props) {
     <div className='w-full flex flex-col items-center'>
       <FeatureCard />
       <form onSubmit={handleInputSubmit} className="flex flex-col gap-4 justify-center items-center" >
-        <div className='flex justify-center items-center text-center text-purple-500 text-lg font-bold'>
+        <div className='flex justify-center items-center text-center text-purple-500 text-lg font-bold mb-4'>
           {inputAmount <= 0 ? <p>Enter a dollar amount that represents your imaginary investment.</p> : ''}
         </div> 
         <div className='flex flex-col md:flex-row gap-3 md:gap-0 mb-5'>
